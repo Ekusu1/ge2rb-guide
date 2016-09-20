@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>God Eater 2 Rage Burst Guide</title>
+
+	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="resources/vendor/fontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+
+	<script src="resources/vendor/jquery/jquery-2.2.2.min.js"></script>
+	<script src="resources/vendor/tether/js/tether.min.js"></script>
+	<script src="resources/vendor/bootstrap_v4/js/bootstrap.min.js"></script>
+	<script src="resources/vendor/knockout/knockout-3.4.0.min.js"></script>
+
+	<script src="resources/js/MAIN_DATA.js"></script>
+	<script src="resources/ko/base/models/AragamiModel.js"></script>
+	<script src="resources/ko/main/ViewModel.js"></script>
+</head>
+<body>
+<script type="text/template" id="aragami-template">
+	<!-- ko if:$index()%3==0 -->
+	<div class="clearfix"></div>
+	<!--/ko-->
+
+	<div class="col-xs-12 col-md-4">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<h3>
+					<span class="label label-default" data-bind="text:size"></span>
+					<a data-bind="text:name,attr:{href:wikiLink}"></a>
+				</h3>
+			</div>
+			<!--<img class="card-img-top" src="..." alt="Card image cap">-->
+			<ul class="list-group" data-bind="foreach:attributeTypes">
+				<li class="list-group-item">
+					<span class="h4" data-bind="text: $parent.attributeTypesMap[$data]"></span>
+					<div class="pull-right" data-bind="foreach:$parent.attributeIcons()[$data]">
+						<span class="tag tag-default">
+							<span data-bind="css: $data"></span>
+						</span>
+					</div>
+				</li>
+			</ul>
+			<div class="row" data-bind="visible: size() != 'S'">
+				<div class="col-xs-12 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Weakspots</h4>
+						</li>
+						<!-- ko foreach:weakspots -->
+						<li class="list-group-item" data-bind="text:$data"></li>
+						<!-- /ko -->
+					</ul>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Breakable Bonds</h4>
+						</li>
+						<!-- ko foreach:bonds -->
+						<li class="list-group-item" data-bind="text:$data"></li>
+						<!-- /ko -->
+					</ul>
+				</div>
+			</div>
+			<div class="panel-body">
+				<h6 class="panel-title">
+					Drops <!-- ko text:"(Prefix: "+itemPrefix()+")" --><!-- /ko -->
+				</h6>
+				<ul data-bind="foreach:drops">
+					<li data-bind="text:$data"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>
+<nav class="navbar navbar-fixed-top">
+	<input type="search" class="form-control" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
+</nav>
+<div class="container-fluid">
+	<datalist id="aragamisAutocompleteList" data-bind="foreach: aragamis">
+		<option data-bind="attr:{value:name}, text:name"></option>
+	</datalist>
+	<div data-bind="foreach: aragamisFilter">
+		<!-- ko template: 'aragami-template' -->
+		<!-- /ko -->
+	</div>
+</div>
+<script src="resources/js/initMain.js"></script>
+</body>
+</html>

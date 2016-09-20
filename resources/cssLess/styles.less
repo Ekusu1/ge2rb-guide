@@ -1,0 +1,91 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	padding-top: 51px;
+}
+
+#loading {
+	z-index: 20000;
+	position: fixed;
+	top: 0;
+	right: 0; bottom: 0;
+	left: 0;
+	background-image: url('../images/loading.gif');
+	background-size: 100% 100%;
+	transition: opacity 2s;
+	display: block;
+	opacity: .95;
+}
+
+.tab-content {
+	padding-bottom: 51px;
+}
+
+main {
+	height: 100%;
+}
+
+.table-fixed-header {
+	.table-header {
+		position: fixed;
+		margin-bottom: 0;
+	}
+}
+
+.dataList {
+	.table {
+		thead tr {
+			th {
+				&:first-child { width: 25px; }
+				&:last-child { width: 50px; }
+			}
+		}
+	}
+}
+
+.bg-primary { background-color: #4b8abd; color: #000000; }
+.bg-success { background-color: #7cbf60; color: #000000; }
+.bg-info { background-color: #5eaabd; color: #000000; }
+.bg-warning { background-color: #bfae60; color: #000000; }
+.bg-danger { background-color: #bd7b7b; color: #000000; }
+.modal-content{	border-radius: 0; }
+.modal-body { background: #ffffff; }
+
+.btn {
+	border-radius: 0 !important;
+	.btn-group>& {
+		border-radius: 0 !important;
+	}
+}
+
+.form-control {
+	border-radius: 0 !important;
+}
+
+.modal-inner-scroll {
+	.modal-dialog {
+		height: 100%;
+		margin: 0 auto;
+		padding: 30px 15px;
+	}
+	.modal-content {
+		max-height: 100%;
+		padding: 4em 0;
+	}
+	.modal-header,
+	.modal-footer {
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 1;
+	}
+	.modal-header { top: 0; }
+	.modal-footer { bottom: 0; }
+	.modal-body {
+		max-height: 100%;
+		overflow-y: auto;
+	}
+}

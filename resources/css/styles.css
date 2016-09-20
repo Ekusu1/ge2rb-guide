@@ -1,0 +1,9 @@
+.color-blaze { color: #e00; }
+.color-freeze { color: #0ee; }
+.color-spark { color: #ee0; }
+.color-divine { color: #e0e; }
+.color-no { opacity: .5; }
+.tag-square {
+  width: 20px;
+  height: 20px;
+}
