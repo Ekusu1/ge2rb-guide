@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>God Eater 2 Rage Burst Guide</title>
 
@@ -80,7 +81,11 @@
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-	<input type="search" class="form-control" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
+	<div class="container-fluid">
+		<form action="#" class="navbar-form">
+			<input placeholder="Search" type="search" class="form-control input-lg" style="width: 100%;" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
+		</form>
+	</div>
 </nav>
 <main class="container-fluid">
 	<datalist id="aragamisAutocompleteList" data-bind="foreach: aragamis">
