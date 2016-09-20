@@ -981,6 +981,31 @@ var MAIN_DATA = {
 			drops:               []
 		},
 		{
+			name:                "Garm",
+			size:                "L",
+			attribute:           [
+				"Blaze"
+			],
+			attributeWeakness:   [
+				"Freeze"
+			],
+			attributeResistance: [
+				"Blaze",
+				"Spark",
+				"Divine"
+			],
+			weakspots:           [
+				"Head"
+			],
+			bonds:               [
+				"Head",
+				"Gauntlet",
+				"Hind Legs"
+			],
+			itemPrefix:          "Wolf",
+			drops:               []
+		},
+		{
 			name:                "God Arc Soldier",
 			size:                "M",
 			attribute:           [
@@ -1468,31 +1493,6 @@ var MAIN_DATA = {
 				"Hind Legs"
 			],
 			itemPrefix:          "Mars",
-			drops:               []
-		},
-		{
-			name:                "Garm",
-			size:                "L",
-			attribute:           [
-				"Blaze"
-			],
-			attributeWeakness:   [
-				"Freeze"
-			],
-			attributeResistance: [
-				"Blaze",
-				"Spark",
-				"Divine"
-			],
-			weakspots:           [
-				"Head"
-			],
-			bonds:               [
-				"Head",
-				"Gauntlet",
-				"Hind Legs"
-			],
-			itemPrefix:          "Wolf",
 			drops:               []
 		},
 		{
