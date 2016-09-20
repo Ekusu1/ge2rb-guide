@@ -15,7 +15,8 @@ function AragamiModel(data = {
 	self.data = data;
 
 	self.name = ko.observable('');
-	self.wikiLink = ko.pureComputed(()=>""+name);
+	self.wikiLink = ko.pureComputed(()=>""+self.name());
+	self.imgPath = ko.pureComputed(()=>"resources/images/aragami/"+self.name()+".png");
 	self.size = ko.observable('');
 	self.attribute = ko.observableArray([]);
 	self.attributeWeakness = ko.observableArray([]);
