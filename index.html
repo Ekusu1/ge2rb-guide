@@ -26,7 +26,7 @@
 		<div class="clearfix"></div>
 		<!--/ko-->
 
-		<div class="col-xs-12 col-md-4">
+		<div class="col-xs-12 col-sm-4">
 			<div class="panel panel-default" >
 				<div class="panel-heading">
 					<h3>
@@ -35,16 +35,16 @@
 					</h3>
 				</div>
 				<!--<img class="card-img-top" src="..." alt="Card image cap">-->
-				<ul class="list-group" data-bind="foreach:attributeTypes">
-					<li class="list-group-item">
-						<span class="h4" data-bind="text: $parent.attributeTypesMap[$data]"></span>
-						<div class="pull-right" data-bind="foreach:$parent.attributeIcons()[$data]">
-						<span class="tag tag-default">
+				<table class="table table-bordered table-condensed">
+					<tr data-bind="foreach:attributeTypes">
+						<th data-bind="text: $parent.attributeTypesMap[$data]"></th>
+					</tr>
+					<tr data-bind="foreach:attributeTypes" style="font-size: 17px;">
+						<td data-bind="foreach:$parent.attributeIcons()[$data]">
 							<span data-bind="css: $data"></span>
-						</span>
-						</div>
-					</li>
-				</ul>
+						</td>
+					</tr>
+				</table>
 				<div class="row" data-bind="visible: size() != 'S'">
 					<div class="col-xs-12 col-md-6">
 						<ul class="list-group">
