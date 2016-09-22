@@ -37,7 +37,7 @@ function AragamiModel(data = {
 		self.attributeTypes.forEach((va)=>{
 			icons[va] = ["Blaze","Freeze","Spark","Divine"];
 			icons[va] = icons[va].map((v)=>{
-				var newValue = "fa fa-fw";
+				var newValue = "fa";
 				switch (v){
 					case "Blaze": newValue +=  ' fa-fire'; break;
 					case "Freeze": newValue += ' fa-asterisk'; break;

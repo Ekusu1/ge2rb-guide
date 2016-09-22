@@ -51,8 +51,8 @@
 						<tr data-bind="foreach:attributeTypes">
 							<th data-bind="text: $parent.attributeTypesMap[$data]"></th>
 						</tr>
-						<tr data-bind="foreach:attributeTypes" style="font-size: 17px;">
-							<td data-bind="foreach:$parent.attributeIcons()[$data]">
+						<tr data-bind="foreach:attributeTypes" style="font-size: 18px;">
+							<td class="col-xs-4" data-bind="foreach:$parent.attributeIcons()[$data]">
 								<span data-bind="css: $data"></span>
 							</td>
 						</tr>
