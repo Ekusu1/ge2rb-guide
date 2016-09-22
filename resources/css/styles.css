@@ -33,12 +33,33 @@ main {
 	min-height: 75px;
 }
 
-.panel-img > h2 {
-	position: absolute;
+.panel-img h1,
+.panel-img h2,
+.panel-img h3,
+.panel-img h4,
+.panel-img h5,
+.panel-img h6 {
 	margin: 0;
-	top: 5px;
-	left: 5px;
+}
+
+.label-size,
+.label-name {
+	position: absolute;
+	font-size: 75%;
 	opacity: .75;
+	left: 5px;
+}
+
+.label-name {
+	top: 5px;
+}
+
+.label-size {
+	bottom: 5px;
+}
+
+.panel-img .label {
+	/*margin: 0;*/
 }
 
 .panel > .table > tbody:first-child > tr:first-child td,
@@ -55,4 +76,9 @@ main {
 .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
 .panel > .table-responsive > .table-bordered > thead > tr:first-child > th {
 	border-bottom: 1px solid #ddd
+}
+
+.label-drop {
+	font-size: 100%;
+	float: right;
 }

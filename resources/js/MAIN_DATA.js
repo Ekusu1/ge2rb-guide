@@ -1,45 +1,4 @@
-/**
- * @typedef {object} material
- * @property {string}       name       - the name of the aragami
- * @property {string}       size       - small, mid, large
- * @property {[string]}     atkElement - blaze, freeze, spark, divine
- * @property {[string]}     weakness   - blaze, freeze, spark, divine
- * @property {string[]}     resistance - blaze, freeze, spark, divine
- * @property {[weakspot]}   weakspots -
- * @property {[drop]}       drops     -
- */
-/**
- * @typedef {object} aragami
- * @property {string}       name       - the name of the aragami
- * @property {string}       size       - small, mid, large
- * @property {[string]}     atkElement - blaze, freeze, spark, divine
- * @property {[string]}     weakness   - blaze, freeze, spark, divine
- * @property {string[]}     resistance - blaze, freeze, spark, divine
- * @property {[weakspot]}   weakspots -
- * @property {[drop]}       drops     -
- */
-/**
- * @typedef {object} mission
- * @property {string}  type
- * @property {number}  difficulty
- * @property {string}  name
- * @property {string}  field
- * @property {array}  other
- * @property {[{}]}  aragamis
- * @property {[reward]}  rewards
- */
-/**
- * @typedef {object} reward
- * @property {string}  type
- * @property {string}  name
- * @property {number}  chance
- * @property {number}  max
- */
-/**
- * @namespace
- * @property {aragami[]} aragamis
- * @property {[mission]} missions
- */
+const WIKI_LINK = 'http://godeater.wikia.com/wiki/';
 var MAIN_DATA = {
 	aragamis: [
 		{
@@ -776,7 +735,7 @@ var MAIN_DATA = {
 				"Turbine",
 				"Tail"
 			],
-			itemPrefix:          "Hunger",
+			itemPrefix:          "Hunger, Reptilian",
 			drops:               []
 		},
 		{
@@ -1541,7 +1500,7 @@ var MAIN_DATA = {
 				"Eyes",
 				"Legs"
 			],
-			itemPrefix:          "Chaotic",
+			itemPrefix:          "Chaotic, Abyssal",
 			drops:               []
 		},
 		{
