@@ -82,3 +82,27 @@ main {
 	font-size: 100%;
 	float: right;
 }
+
+.panel-aragami .list-unstyled li {
+	border-bottom: 1px solid #f2f2f2;
+}
+.panel-aragami .list-unstyled li:last-child {
+	border-bottom: none;
+}
+.panel-aragami .list-unstyled {
+	margin-bottom: 0;
+}
+
+.np-t { padding-top: 0 !important; }
+.np-r { padding-right: 0 !important; }
+.np-b { padding-bottom: 0 !important; }
+.np-l { padding-left: 0 !important; }
+.np-x { padding-right: 0 !important; padding-left: 0 !important; }
+.np-y { padding-top: 0 !important; padding-bottom: 0 !important; }
+
+.nm-t { margin-top: 0 !important; }
+.nm-r { margin-right: 0 !important; }
+.nm-b { margin-bottom: 0 !important; }
+.nm-l { margin-left: 0 !important; }
+.nm-x { margin-right: 0 !important; padding-left: 0 !important; }
+.nm-y { margin-top: 0 !important; margin-bottom: 0 !important; }

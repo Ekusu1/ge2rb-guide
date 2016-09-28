@@ -27,13 +27,16 @@
 		<!--/ko-->
 
 		<div class="col-xs-12 col-sm-4">
-			<div class="panel panel-default" >
+			<div class="panel panel-aragami panel-default" >
 				<div class="panel-img">
-					<img class="img-responsive aragami-thumb" data-bind="attr:{src:imgPath}" width="500" height="125">
-					<h3>
+					<img class="img-responsive aragami-thumb" data-bind="attr:{src:imgPath}" width="600" height="150" />
+					<!--<object class="img-responsive aragami-thumb" data-bind="attr:{data:imgPath}" type="image/png">
+						<img class="img-responsive aragami-thumb" src="resources/images/aragamiDefault.png" width="500" height="125" />
+					</object>-->
+					<h4>
 						<span class="label label-default label-size" data-bind="text:size"></span>
 						<a class="label label-default label-name" data-bind="text:name,attr:{href:wikiLink}" target="_blank"></a>
-					</h3>
+					</h4>
 				</div>
 				<table class="table table-bordered table-condensed">
 					<tr>
@@ -42,8 +45,17 @@
 							<span class="label label-default label-drop" data-bind="text:itemPrefix"></span>
 						</th>
 					</tr>
-					<tr data-bind="foreach:drops">
-						<td data-bind="text:$data"></td>
+					<tr>
+						<td data-bind="with:dropsGrouped[1]">
+							<div class="panel">
+								<div class="panel-header" data-bind="text:1"></div>
+								<div class="panel-body" data-bind="foreach:$data">
+									<span class="pull-left" data-bind="text: $data.item"></span>
+									<span class="pull-right" data-bind="text: $data.chance"></span>
+									<br>
+								</div>
+							</div>
+						</td>
 					</tr>
 				</table>
 				<table class="table table-bordered table-condensed">
@@ -52,7 +64,7 @@
 							<th data-bind="text: $parent.attributeTypesMap[$data]"></th>
 						</tr>
 						<tr data-bind="foreach:attributeTypes" style="font-size: 18px;">
-							<td class="col-xs-4" data-bind="foreach:$parent.attributeIcons()[$data]">
+							<td class="col-xs-4 text-justify" data-bind="foreach:$parent.attributeIcons()[$data]">
 								<span data-bind="css: $data"></span>
 							</td>
 						</tr>
@@ -65,13 +77,13 @@
 							<th class="col-xs-6">Breakable Bonds</th>
 						</tr>
 						<tr>
-							<td>
-								<ul data-bind="foreach:weakspots">
+							<td class="np-y">
+								<ul class="list-unstyled" data-bind="foreach:weakspots">
 									<li data-bind="text:$data"></li>
 								</ul>
 							</td>
-							<td>
-								<ul data-bind="foreach:bonds">
+							<td class="np-y">
+								<ul class="list-unstyled" data-bind="foreach:bonds">
 									<li data-bind="text:$data"></li>
 								</ul>
 							</td>

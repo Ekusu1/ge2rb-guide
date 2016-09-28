@@ -26,6 +26,8 @@ function AragamiModel(data = {
 	self.itemPrefix = ko.observableArray("");
 	self.drops = ko.observableArray([]);
 
+	$.each(self.data, (k,v)=>self[k](v));
+
 	self.attributeTypes = ['attribute','attributeWeakness','attributeResistance'];
 	self.attributeTypesMap = {
 		'attribute': 'Attribute',
@@ -59,9 +61,39 @@ function AragamiModel(data = {
 		});
 		return icons;
 	});
-	self.attributeWeaknessIcons = ko.observableArray([]);
-	self.attributeResistanceIcons = ko.observableArray([]);
+	self.dropsGrouped = ko.computed(()=>{
+		var drops = self.drops(),
+			dropsGrouped = {};
 
+		drops.forEach((chances)=>{
+			var item = chances.item;
+			delete chances.item;
+			$.each(chances, (difficulty, chance)=>{
+				dropsGrouped[difficulty] === undefined && (dropsGrouped[difficulty] = []);
+				chance = Math.round(chance * 100);
+				chance>0 && (dropsGrouped[difficulty].push({item,chance}));
+			});
+		});
 
-	$.each(self.data, (k,v)=>self[k](v));
+		var reducedDropsGrouped = {};
+		var newDifficulty = '';
+		var newItems = null;
+		$.each(dropsGrouped, (currentDifficulty, currentItems)=>{
+			if (currentItems.length < 1) { return true; }
+
+			var prevItems=JSON.stringify(newItems);
+			var currItems=JSON.stringify(currentItems);
+			if (newItems !== null && JSON.stringify(newItems) === JSON.stringify(currentItems)) {
+				newDifficulty += ', '+currentDifficulty
+			} else if (newItems !== null) {
+				reducedDropsGrouped[newDifficulty] = newItems;
+			} else {
+				newDifficulty = currentDifficulty;
+				newItems = currentItems;
+			}
+		});
+
+		data.name == 'Ogretail' && console.log(reducedDropsGrouped);
+		return dropsGrouped;
+	});
 }

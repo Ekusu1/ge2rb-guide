@@ -1,5 +1,5 @@
 const WIKI_LINK = 'http://godeater.wikia.com/wiki/';
-var MAIN_DATA = {
+var MAIN_DATA   = {
 	aragamis: [
 		{
 			name:                "Move Target (Night Hollow)",
@@ -85,7 +85,179 @@ var MAIN_DATA = {
 			],
 			bonds:               [],
 			itemPrefix:          "Ogre",
-			drops:               []
+			drops:               [
+				{
+					"item": "Aragami Bone Chip",
+					1:      0.25,
+					2:      0.264,
+					3:      0.277,
+					4:      0.3,
+					5:      0.3,
+					6:      0.3,
+					7:      0.3,
+					8:      0.3,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0
+				},
+				{
+					"item": "Aragami Claw",
+					1:      0.23,
+					2:      0.264,
+					3:      0.277,
+					4:      0.27,
+					5:      0.27,
+					6:      0.27,
+					7:      0.27,
+					8:      0.27,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0
+				},
+				{
+					"item": "Ogre Fang",
+					1:      0.22,
+					2:      0.142,
+					3:      0.149,
+					4:      0.05,
+					5:      0.05,
+					6:      0.05,
+					7:      0.05,
+					8:      0.05,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.27
+				},
+				{
+					"item": "Ogre Tail",
+					1:      0.15,
+					2:      0.142,
+					3:      0.099,
+					4:      0.15,
+					5:      0.15,
+					6:      0.15,
+					7:      0.15,
+					8:      0.15,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0
+				},
+				{
+					"item": "Cinnabar",
+					1:      0.08,
+					2:      0.113,
+					3:      0.119,
+					4:      0.15,
+					5:      0.15,
+					6:      0.15,
+					7:      0.15,
+					8:      0.15,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.15
+				},
+				{
+					"item": "Ogre Helm",
+					1:      0.07,
+					2:      0.075,
+					3:      0.079,
+					4:      0.08,
+					5:      0.08,
+					6:      0.08,
+					7:      0.08,
+					8:      0.08,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.3
+				},
+				{
+					"item": "Aragami Bone",
+					1:      0,
+					2:      0,
+					3:      0,
+					4:      0,
+					5:      0,
+					6:      0,
+					7:      0,
+					8:      0,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.15
+				},
+				{
+					"item": "Ogre Sharp Tail",
+					1:      0,
+					2:      0,
+					3:      0,
+					4:      0,
+					5:      0,
+					6:      0,
+					7:      0,
+					8:      0,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.08
+				},
+				{
+					"item": "Ogre Sharp Helm",
+					1:      0,
+					2:      0,
+					3:      0,
+					4:      0,
+					5:      0,
+					6:      0,
+					7:      0,
+					8:      0,
+					9:      0,
+					10:     0,
+					11:     0,
+					12:     0,
+					13:     0,
+					14:     0,
+					15:     0,
+					Challenge:   0.05
+				}
+			]
 		},
 		{
 			name:                "Fallen Ogretail",
@@ -353,7 +525,7 @@ var MAIN_DATA = {
 			drops:               []
 		},
 		{
-			name:                "Fallen Kongou",
+			name:                "Fallen Kongou (Freeze)",
 			size:                "M",
 			attribute:           [
 				"Freeze"
@@ -541,7 +713,7 @@ var MAIN_DATA = {
 			drops:               []
 		},
 		{
-			name:                "Fallen Chi-You",
+			name:                "Fallen Chi-You (Spark)",
 			size:                "M",
 			attribute:           [
 				"Spark"
@@ -642,7 +814,7 @@ var MAIN_DATA = {
 		},
 		{
 			name:                "Yaksha",
-			size:                "",
+			size:                "M",
 			attribute:           [
 				"Divine"
 			],
@@ -915,6 +1087,32 @@ var MAIN_DATA = {
 			drops:               []
 		},
 		{
+			name:                "Fallen Sariel",
+			size:                "L",
+			attribute:           [
+				"Divine"
+			],
+			attributeWeakness:   [
+				"Blaze",
+				"Freeze",
+				"Spark"
+			],
+			attributeResistance: [
+				"Divine"
+			],
+			weakspots:           [
+				"Skirt",
+				"Unbound Legs"
+			],
+			bonds:               [
+				"Head",
+				"Skirt",
+				"Legs"
+			],
+			itemPrefix:          "Witch",
+			drops:               []
+		},
+		{
 			name:                "Rufus Caligula",
 			size:                "L",
 			attribute:           [
@@ -1105,32 +1303,6 @@ var MAIN_DATA = {
 				"Missile Pod"
 			],
 			itemPrefix:          "Anathema",
-			drops:               []
-		},
-		{
-			name:                "Fallen Sariel",
-			size:                "L",
-			attribute:           [
-				"Divine"
-			],
-			attributeWeakness:   [
-				"Blaze",
-				"Freeze",
-				"Spark"
-			],
-			attributeResistance: [
-				"Divine"
-			],
-			weakspots:           [
-				"Skirt",
-				"Unbound Legs"
-			],
-			bonds:               [
-				"Head",
-				"Skirt",
-				"Legs"
-			],
-			itemPrefix:          "Witch",
 			drops:               []
 		},
 		{
