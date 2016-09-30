@@ -97,14 +97,14 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
-		<form action="#" class="navbar-form" data-bind="submit:addAragamiSearchTag">
+		<form action="#" class="navbar-form navbar-form-no-border" data-bind="submit:addAragamiSearchTag">
 			<input placeholder="Search" type="search" class="form-control input-lg" style="width: 100%;" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
 		</form>
 	</div>
 	<div class="container-fluid" data-bind="foreach:aragamiSearchTags">
 		<div class="btn-group btn-group-xs">
-			<button type="button" class="btn" data-bind="text:$data"></button>
-			<button type="button" class="btn btn-danger" data-bind="click:$root.removeAragamiSearchTag, attr:{'data-to-remove': $data}">&times;</button>
+			<button type="button" class="btn" data-bind="text:$data, click:$root.removeAragamiSearchTag, attr:{'data-to-remove': $data}" ></button>
+			<button type="button" class="btn btn-danger" data-bind="">&times;</button>
 		</div>
 	</div>
 </nav>

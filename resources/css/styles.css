@@ -14,7 +14,7 @@
 }
 
 main {
-	margin-top: 85px;
+	margin-top: 95px;
 }
 
 .panel-heading > h3 {
@@ -46,16 +46,18 @@ main {
 .label-name {
 	position: absolute;
 	font-size: 75%;
-	opacity: .75;
-	left: 5px;
+	opacity: .65;
+	top: 5px;
+	color: #000;
+	background: #fff;
 }
 
 .label-name {
-	top: 5px;
+	left: 5px;
 }
 
 .label-size {
-	bottom: 5px;
+	right: 5px;
 }
 
 .panel-img .label {
@@ -106,3 +108,11 @@ main {
 .nm-l { margin-left: 0 !important; }
 .nm-x { margin-right: 0 !important; padding-left: 0 !important; }
 .nm-y { margin-top: 0 !important; margin-bottom: 0 !important; }
+
+.navbar-form-no-border{
+	border: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

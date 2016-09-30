@@ -1163,7 +1163,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "God Arc Soldier",
+			name:                "Blade Arc Soldier",
 			size:                "M",
 			attribute:           [
 				"Divine"
@@ -1187,7 +1187,55 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Rampage God Arc Soldier",
+			name:                "Buster Arc Soldier",
+			size:                "M",
+			attribute:           [
+				"Divine"
+			],
+			attributeWeakness:   [
+				"Blaze",
+				"Freeze",
+				"Spark",
+				"Divine"
+			],
+			attributeResistance: [],
+			weakspots:           [
+				"Head"
+			],
+			bonds:               [
+				"Left Arm",
+				"Head",
+				"Back Armor"
+			],
+			itemPrefix:          "Golem",
+			drops:               []
+		},
+		{
+			name:                "Wild Blade Arc Soldier",
+			size:                "M",
+			attribute:           [
+				"Divine"
+			],
+			attributeWeakness:   [
+				"Blaze",
+				"Freeze",
+				"Spark",
+				"Divine"
+			],
+			attributeResistance: [],
+			weakspots:           [
+				"Head"
+			],
+			bonds:               [
+				"Left Arm",
+				"Head",
+				"Back Armor"
+			],
+			itemPrefix:          "Golem",
+			drops:               []
+		},
+		{
+			name:                "Wild Buster Arc Soldier",
 			size:                "M",
 			attribute:           [
 				"Divine"
