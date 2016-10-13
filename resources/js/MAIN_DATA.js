@@ -521,7 +521,7 @@ var MAIN_DATA   = {
 				"Torso",
 				"Tail"
 			],
-			itemPrefix:          "",
+			itemPrefix:          "Simian",
 			drops:               []
 		},
 		{
@@ -809,7 +809,7 @@ var MAIN_DATA   = {
 				"Arm Fins",
 				"Tail Fin"
 			],
-			itemPrefix:          "",
+			itemPrefix:          "Ritual",
 			drops:               []
 		},
 		{

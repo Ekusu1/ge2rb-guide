@@ -14,19 +14,19 @@ function AragamiModel(data = {
 	var self = this;
 	self.data = data;
 
-	self.name = ko.observable('');
-	self.wikiLink = ko.pureComputed(()=>WIKI_LINK+self.name());
-	self.imgPath = ko.pureComputed(()=>"resources/images/aragami/"+self.name()+".png");
-	self.size = ko.observable('');
-	self.attribute = ko.observableArray([]);
-	self.attributeWeakness = ko.observableArray([]);
-	self.attributeResistance = ko.observableArray([]);
-	self.weakspots = ko.observableArray([]);
-	self.bonds = ko.observableArray([]);
-	self.itemPrefix = ko.observableArray("");
-	self.drops = ko.observableArray([]);
+	self.name = '';
+	self.wikiLink = ko.pureComputed(()=>WIKI_LINK+self.name);
+	self.imgPath = ko.pureComputed(()=>"resources/images/aragami/"+self.name+".png");
+	self.size = '';
+	self.attribute = [];
+	self.attributeWeakness = [];
+	self.attributeResistance = [];
+	self.weakspots = [];
+	self.bonds = [];
+	self.itemPrefix = "";
+	self.drops = [];
 
-	$.each(self.data, (k,v)=>self[k](v));
+	$.each(self.data, (k,v)=>self[k]=v);
 
 	self.attributeTypes = ['attribute','attributeWeakness','attributeResistance'];
 	self.attributeTypesMap = {
@@ -46,7 +46,7 @@ function AragamiModel(data = {
 					case "Spark": newValue +=  ' fa-flash'; break;
 					case "Divine": newValue += ' fa-sun-o'; break;
 				}
-				if (self[va]().indexOf(v) > -1) {
+				if (self[va].indexOf(v) > -1) {
 					switch (v){
 						case "Blaze":  newValue += ' color-blaze'; break;
 						case "Freeze":  newValue += ' color-freeze'; break;
@@ -62,7 +62,7 @@ function AragamiModel(data = {
 		return icons;
 	});
 	self.dropsGrouped = ko.computed(()=>{
-		var drops = self.drops(),
+		var drops = self.drops,
 			dropsGrouped = {};
 
 		drops.forEach((chances)=>{

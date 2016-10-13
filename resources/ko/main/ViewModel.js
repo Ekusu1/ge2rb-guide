@@ -28,15 +28,13 @@ function MainViewModel() {
 			return self.aragamis();
 		}
 
-		var list = self.aragamis().filter((v)=>{
-			var doLog = v.name() === 'Move Target (Night Hollow)' ||
-				v.itemPrefix() === 'A/F-Ticket';
+		var list = self.aragamis().filter((aragami)=>{
+			var doLog = aragami.name === 'Move Target (Night Hollow)' ||
+				aragami.itemPrefix === 'A/F-Ticket';
 			var searchIn = [
-				v.name().toLowerCase(),
-				v.itemPrefix().toLowerCase()
+				aragami.name.toLowerCase(),
+				aragami.itemPrefix.toLowerCase()
 			];
-			doLog && console.group(v.name());
-			doLog && console.log(searchIn);
 
 			var endResult = searchIn.some((curValue)=>{
 				var result = false;
@@ -46,13 +44,11 @@ function MainViewModel() {
 				doLog && console.log('txt', filter, result);
 				if (!result) {
 					result = filterTags.some((tagValue)=>{
-						doLog && console.log('tag',curValue, curValue.indexOf(tagValue) !== -1);
 						return curValue.indexOf(tagValue) !== -1;
 					})
 				}
 				return result;
 			});
-			doLog && console.groupEnd(v.name());
 			return endResult;
 		});
 
