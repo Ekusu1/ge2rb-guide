@@ -1,5 +1,23 @@
 const WIKI_LINK = 'http://godeater.wikia.com/wiki/';
 var MAIN_DATA   = {
+	skills: {
+		effect: [],
+		support: [],
+		compound: [],
+	},
+	items: {
+		melee: [],
+		gun: [],
+		shield: [],
+		controlUnit: [],
+		upgradePart: [],
+		supportDevice: [],
+		top: [],
+		bottom: [],
+		consumables: [],
+		trade: [],
+		material: []
+	},
 	aragamis: [
 		{
 			name:                "Move Target (Night Hollow)",
@@ -551,7 +569,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Fierce Kongou",
+			name:                "Fierce Kongou (Spark)",
 			size:                "M",
 			attribute:           [
 				"Spark"
@@ -985,7 +1003,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Dyaus Pita (Heavenly Father)",
+			name:                "Dyaus Pita",
 			size:                "L",
 			attribute:           [
 				"Spark"
@@ -1308,7 +1326,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Fallen Quadriga",
+			name:                "Fallen Quadriga (Freeze)",
 			size:                "L",
 			attribute:           [
 				"Freeze"
@@ -2065,7 +2083,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "God Arc Soldier Version Zero",
+			name:                "God Arc Soldier Zero",
 			size:                "L",
 			attribute:           [],
 			attributeWeakness:   [
@@ -2138,5 +2156,9 @@ var MAIN_DATA   = {
 				{reward: 'Restore Pill', condition: 'Automatic', probability: 25, max: 1}
 			]
 		},
-	]
+	],
+	bloodArts: [],
+	bloodBullets: [],
+	personalAbilities: [],
+	characterEpisodes: [],
 }

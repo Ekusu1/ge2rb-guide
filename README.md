@@ -26,6 +26,11 @@ This is an interactive guide for the game God Eater 2 Rage Burst.
     - locations
     - rewards
   - prices if in shop
-  - selling prices  
+  - selling prices
 - Crafting guide
   - ... a lot
+- Skills List
+  - Skill Effects
+  - Support Skills
+  - Compound Skills
+- Skill "Simulator"
