@@ -12,21 +12,18 @@ function AragamiModel(data = {
 	drops: []
 }) {
 	var self = this;
-	self.data = data;
 
-	self.name = '';
+	self.name = data.name;
 	self.wikiLink = ko.pureComputed(()=>WIKI_LINK+self.name);
 	self.imgPath = ko.pureComputed(()=>"resources/images/aragami/"+self.name+".png");
-	self.size = '';
-	self.attribute = [];
-	self.attributeWeakness = [];
-	self.attributeResistance = [];
-	self.weakspots = [];
-	self.bonds = [];
-	self.itemPrefix = "";
-	self.drops = [];
-
-	$.each(self.data, (k,v)=>self[k]=v);
+	self.size = data.size;
+	self.attribute = data.attribute;
+	self.attributeWeakness = data.attributeWeakness;
+	self.attributeResistance = data.attributeResistance;
+	self.weakspots = data.weakspots;
+	self.bonds = data.bonds;
+	self.itemPrefix = data.itemPrefix;
+	self.drops = data.drops;
 
 	self.attributeTypes = ['attribute','attributeWeakness','attributeResistance'];
 	self.attributeTypesMap = {
@@ -93,7 +90,6 @@ function AragamiModel(data = {
 			}
 		});
 
-		data.name == 'Ogretail' && console.log(reducedDropsGrouped);
 		return dropsGrouped;
 	});
 }

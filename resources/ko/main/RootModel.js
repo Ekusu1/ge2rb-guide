@@ -1,16 +1,19 @@
-function MainViewModel() {
+function RootModel() {
 	var self = this;
 
-	self.aragamis = ko.observableArray([]);
-	MAIN_DATA.aragamis.forEach((v,i,a)=>{
-		self.aragamis.push(new AragamiModel(v))
-	});
+
+	self.data = {
+		aragamis: []
+	};
+	MAIN_DATA.aragamis.forEach(aragami=>self.data.aragamis.push(new AragamiModel(aragami)));
+
+	console.log(self.data);
 
 	self.aragamiSearchInput = ko.observable('');
 	self.aragamiSearchTags = ko.observableArray([]);
 	self.addAragamiSearchTag = function () {
 		var toAdd = self.aragamiSearchInput();
-		if (self.aragamiSearchTags.indexOf(toAdd) < 0) {
+		if (toAdd !== '' && self.aragamiSearchTags.indexOf(toAdd) < 0) {
 			self.aragamiSearchInput('');
 			self.aragamiSearchTags.push(toAdd);
 		}
@@ -22,13 +25,13 @@ function MainViewModel() {
 	self.aragamisFilter = ko.pureComputed(()=>{
 		"use strict";
 		var filter = self.aragamiSearchInput().toLowerCase();
-		var filterTags = self.aragamiSearchTags().map((v)=>v.toLowerCase());
+		var filterTags = self.aragamiSearchTags().map(v=>v.toLowerCase());
 
 		if (filter === '' && filterTags.length === 0) {
-			return self.aragamis();
+			return self.data.aragamis;
 		}
 
-		var list = self.aragamis().filter((aragami)=>{
+		var list = self.data.aragamis.filter((aragami)=>{
 			var doLog = aragami.name === 'Move Target (Night Hollow)' ||
 				aragami.itemPrefix === 'A/F-Ticket';
 			var searchIn = [
@@ -41,7 +44,6 @@ function MainViewModel() {
 				if (filter !== '') {
 					result = curValue.indexOf(filter) !== -1;
 				}
-				doLog && console.log('txt', filter, result);
 				if (!result) {
 					result = filterTags.some((tagValue)=>{
 						return curValue.indexOf(tagValue) !== -1;
@@ -52,6 +54,6 @@ function MainViewModel() {
 			return endResult;
 		});
 
-		return list.length > 0 ? list : self.aragamis();
+		return list.length > 0 ? list : self.data.aragamis;
 	})
 }

@@ -15,24 +15,16 @@ var helpers = new function () {
 		]
 	};
 
-	/**
-	 * @param {boolean} show
-	 */
-	self.showLoader = function (show) {
-		let $loading = $('#loading');
-		show ? $loading.fadeIn(50) : $loading.fadeOut(50)
-	};
+	/** @param {boolean} show */
+	self.showLoader = (show) => $('#loading')['fade'+show?'In':'Out'](50);
 
 	/**
 	 * @param {number} duration in ms
 	 * @param {function} callback
 	 */
-	self.load = (duration = 1000, callback = ()=> {}) => {
+	self.load = function (duration = 1000, callback = ()=>{}) {
 		self.showLoader(true);
-		setTimeout(()=> {
-			callback();
-			self.showLoader(false);
-		}, duration)
+		setTimeout(()=>{callback();self.showLoader(false);}, duration)
 	};
 
 	/**
@@ -82,45 +74,26 @@ var helpers = new function () {
 		return self.findByKeyValue(dataName, 'name', name);
 	};
 
-	/**
-	 * @param {string} dataName
-	 * @param {string} chase
-	 * @returns {Array}
-	 */
-	self.findByChase = function (dataName, chase) {
-		return self.findByKeyValue(dataName, 'chase', name);
-	};
-
 	self.data = {
 		/**
-		 * @param {EffectModel|SkillModel|NinjaModel} model
+		 * @param model
 		 */
 		create: function (model) {
 			window.rootView.data[model.dataName].push(model);
 		},
 		/**
-		 * @param {EffectModel|SkillModel|NinjaModel} model
+		 * @param model
 		 */
 		edit:   function (model) {
 			var index = self.findById(model.dataName, model.id());
 			window.rootView.data[model.dataName].replace(index, model);
 		},
 		/**
-		 * @param {EffectModel|SkillModel|NinjaModel} model
+		 * @param model
 		 */
 		remove: function (model) {
 			window.rootView.data[model.dataName].remove(model);
 		}
-	};
-
-	self.resizeFixedHeaderTable = function () {
-		let wrap = $(".table-fixed-header");
-		wrap.find(".table-header").width(wrap.find(".table-body").width() + "px");
-	};
-
-	self.windowBindings = function () {
-		self.resizeFixedHeaderTable();
-		$(window).resize(self.resizeFixedHeaderTable);
 	};
 
 	self.export = {

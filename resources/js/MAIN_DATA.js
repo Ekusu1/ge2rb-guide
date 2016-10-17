@@ -11,7 +11,7 @@ var MAIN_DATA   = {
 		shield: [],
 		controlUnit: [],
 		upgradePart: [],
-		supportDevice: [],
+		linkSupportDevice: [],
 		top: [],
 		bottom: [],
 		consumables: [],
@@ -1653,7 +1653,6 @@ var MAIN_DATA   = {
 				"Blaze"
 			],
 			attributeResistance: [
-				"Freeze",
 				"Spark",
 				"Divine"
 			],

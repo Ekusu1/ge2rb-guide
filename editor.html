@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>God Eater 2 Rage Burst Guide</title>
+
+	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="resources/vendor/fontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+
+	<script src="resources/vendor/jquery/jquery-2.2.2.min.js"></script>
+	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/vendor/knockout/knockout-3.4.0.min.js"></script>
+
+	<script src="resources/js/MAIN_DATA.js"></script>
+	<script src="resources/ko/editor/models/SkillModel.js"></script>
+	<script src="resources/ko/editor/RootModel.js"></script>
+</head>
+<body>
+<div data-templates>
+	<script type="text/template" id="skill-template">
+
+	</script>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid"></div>
+	</div>
+</nav>
+<main class="container-fluid">
+	<datalist id="aragamisAutocompleteList" data-bind="foreach: data.skills">
+		<option data-bind="attr:{value:name}, text:name"></option>
+	</datalist>
+</main>
+<script src="resources/js/initRoot.js"></script>
+</body>
+</html>
