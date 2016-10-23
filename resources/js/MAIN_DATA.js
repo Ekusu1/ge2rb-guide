@@ -977,7 +977,7 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Golden Vajra",
+			name:                "Gold Vajra",
 			size:                "L",
 			attribute:           [
 				"Spark"
@@ -1277,7 +1277,31 @@ var MAIN_DATA   = {
 			drops:               []
 		},
 		{
-			name:                "Silver God Arc Soldier",
+			name:                "White Iron Long Blade Soldier",
+			size:                "M",
+			attribute:           [
+				"Divine"
+			],
+			attributeWeakness:   [
+				"Blaze",
+				"Freeze",
+				"Spark",
+				"Divine"
+			],
+			attributeResistance: [],
+			weakspots:           [
+				"Head"
+			],
+			bonds:               [
+				"Left Arm",
+				"Head",
+				"Back Armor"
+			],
+			itemPrefix:          "Pale Fox",
+			drops:               []
+		},
+		{
+			name:                "White Iron Buster Soldier",
 			size:                "M",
 			attribute:           [
 				"Divine"
@@ -1345,7 +1369,7 @@ var MAIN_DATA   = {
 				"Missile Pod",
 				"Back Leg"
 			],
-			itemPrefix:          "Pluto",
+			itemPrefix:          "Pluto, King",
 			drops:               []
 		},
 		{
