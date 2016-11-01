@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'ge-glyphs';
+  src: url('fonts/ge-glyphs.eot?n6bqef');
+  src: url('fonts/ge-glyphs.eot?n6bqef#iefix') format('embedded-opentype'), url('fonts/ge-glyphs.ttf?n6bqef') format('truetype'), url('fonts/ge-glyphs.woff?n6bqef') format('woff'), url('fonts/ge-glyphs.svg?n6bqef#ge-glyphs') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.ge-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ge-glyphs' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ge-stack {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+}
+.ge-stack-1x,
+.ge-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.ge-blaze:before {
+  content:  "\e901";
+}
+.ge-freeze:before {
+  content:  "\e907";
+}
+.ge-spark:before {
+  content:  "\e903";
+}
+.ge-divine:before {
+  content:  "\e905";
+}
+.ge-attribute:before {
+  content:  "\e904";
+}
+.ge-weakness:before {
+  content:  "\e902";
+}
+.ge-resistance:before {
+  content:  "\e900";
+}

@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css">
 	<!--<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap-theme.min.css">-->
 	<link rel="stylesheet" href="resources/vendor/fontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/vendor/ge-icons/ge-icons.css">
 	<link rel="stylesheet" href="resources/css/styles.css">
 
 	<script src="resources/vendor/jquery/jquery-2.2.2.min.js"></script>
@@ -28,12 +29,25 @@
 		<div class="col-xs-12 col-sm-4">
 			<div class="panel panel-aragami panel-default" >
 				<div class="panel-img">
-					<img class="img-responsive aragami-thumb" data-bind="attr:{'src':imgPath}" width="600" height="150" />
+					<img class="img-responsive aragami-large" data-bind="attr:{src:imgPath()['large']}" width="600" height="150" />
 					<h4>
-						<span class="label label-default label-size" data-bind="text:size"></span>
+						<img class="img-responsive aragami-small" data-bind="attr:{src:imgPath()['small']}" width="90" height="40">
 						<a class="label label-default label-name" data-bind="text:name,attr:{href:wikiLink}" target="_blank"></a>
+						<span class="label label-default label-size" data-bind="text:size"></span>
 					</h4>
 				</div>
+				<table class="table table-bordered table-condensed">
+					<tbody>
+						<tr data-bind="foreach:attributeTypes" style="font-size: 18px;">
+							<td class="col-xs-4 text-justify" data-bind="foreach:$parent.attributeIcons()[$data]">
+								<span class="ge-stack">
+									<span data-bind="css: 'ge-stack-1x ge-icon ge-'+type"></span>
+									<span data-bind="css: 'ge-stack-1x ge-icon ge-'+attribute+' color-'+color"></span>
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 				<table class="table table-bordered table-condensed">
 					<tr>
 						<th>
@@ -53,18 +67,6 @@
 							</div>
 						</td>
 					</tr>
-				</table>
-				<table class="table table-bordered table-condensed">
-					<tbody>
-						<tr data-bind="foreach:attributeTypes">
-							<th data-bind="text: $parent.attributeTypesMap[$data]"></th>
-						</tr>
-						<tr data-bind="foreach:attributeTypes" style="font-size: 18px;">
-							<td class="col-xs-4 text-justify" data-bind="foreach:$parent.attributeIcons()[$data]">
-								<span data-bind="css: $data"></span>
-							</td>
-						</tr>
-					</tbody>
 				</table>
 				<table class="table table-bordered table-condensed" data-bind="visible: size != 'S'">
 					<tbody>

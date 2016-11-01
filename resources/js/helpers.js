@@ -2,6 +2,16 @@ var helpers = new function () {
 	var self = this;
 
 	self.options = {
+		craftTypes: [
+			'Melee Weapon',
+			'Gun',
+			'Shield',
+			'Control Unit',
+			'Upgrade Parts',
+			'Link Support',
+			'Top',
+			'Bottom'
+		],
 		elements: [
 			'Blaze',
 			'Freeze',
