@@ -17,8 +17,8 @@ function AragamiModel(data = {
 	self.wikiLink = ko.pureComputed(()=>WIKI_LINK+self.name);
 	self.imgPath = ko.pureComputed(()=>{
 		return {
-			large:`resources/images/aragami/${self.name}.png`,
-			small:`resources/images/aragamiSmall/${self.name}.png`
+			large: "resources/images/aragami/"+self.name+".png",
+			small: "resources/images/aragamiSmall/"+self.name+".png"
 		}
 	});
 	self.size = data.size;
