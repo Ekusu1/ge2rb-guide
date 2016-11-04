@@ -10,6 +10,10 @@ This is an interactive guide for the game God Eater 2 Rage Burst.
   - weakspots
   - breakable parts
   - drop prefixes
+- Skills List
+  - Skill Effects
+  - Support Skills
+  - Compound Skills
 
 ## Planned Features
 
@@ -29,8 +33,4 @@ This is an interactive guide for the game God Eater 2 Rage Burst.
   - selling prices
 - Crafting guide
   - ... a lot
-- Skills List
-  - Skill Effects
-  - Support Skills
-  - Compound Skills
 - Skill "Simulator"
