@@ -17,15 +17,15 @@
 
 	<script src="resources/js/MAIN_DATA.js"></script>
 	<script src="resources/ko/base/models/AragamiModel.js"></script>
+	<script src="resources/ko/base/models/SkillEffectModel.js"></script>
+	<script src="resources/ko/base/models/SkillSupportModel.js"></script>
+	<script src="resources/ko/base/models/SkillCompoundModel.js"></script>
 	<script src="resources/ko/main/RootModel.js"></script>
 </head>
 <body>
 <div data-templates>
 	<script type="text/template" id="aragami-template">
-		<!-- ko if:$index()%3==0 -->
-		<div class="clearfix"></div>
-		<!--/ko-->
-
+		<!-- ko if:$index()%3==0 --><div class="clearfix"></div><!--/ko-->
 		<div class="col-xs-12 col-sm-4">
 			<div class="panel panel-aragami panel-default" >
 				<div class="panel-img">
@@ -91,12 +91,68 @@
 			</div>
 		</div>
 	</script>
+
+	<script type="text/template" id="skill-base-template">
+		<!-- ko if:$index()%4==0 --><div class="clearfix"></div><!--/ko-->
+		<div class="col-xs-12 col-sm-3">
+			<div class="panel panel-skill panel-default" data-bind="css: panelClass, template: 'skill-'+type+'-template'"></div>
+		</div>
+	</script>
+	<script type="text/template" id="skill-effect-template">
+		<div class="panel-heading">
+			<b data-bind="text:name"></b>
+			<span class="pull-right">
+				<span class="label label-default" data-bind="text: minLv"></span>
+				<b> - </b>
+				<span class="label label-default" data-bind="text: maxLv"></span>
+			</span>
+		</div>
+		<div class="panel-body">
+			<span data-bind="text: description"></span>
+		</div>
+	</script>
+	<script type="text/template" id="skill-support-template">
+		<div class="panel-heading">
+			<b data-bind="text:name"></b>
+			<span class="pull-right">
+				<span class="label label-default" data-bind="text: minLv"></span>
+				<b> - </b>
+				<span class="label label-default" data-bind="text: maxLv"></span>
+			</span>
+		</div>
+		<div class="panel-body">
+			<span data-bind="text: description"></span>
+		</div>
+	</script>
+	<script type="text/template" id="skill-compound-template">
+		<div class="panel-heading">
+			<b data-bind="text:name"></b>
+		</div>
+		<div class="panel-body">
+			<ul class="list-group" data-bind="foreach: skills">
+				<li class="list-group-item">
+					<span data-bind="text: skill"></span>
+					<span class="badge" data-bind="text: lv"></span>
+				</li>
+			</ul>
+		</div>
+	</script>
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<form action="#" class="navbar-form navbar-form-no-border" data-bind="submit:addAragamiSearchTag">
-			<input placeholder="Search" type="search" class="form-control input-lg" style="width: 100%;" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
+			<div class="input-group input-group-lg" style="width: 100%;">
+				<input placeholder="Search" type="search" class="form-control" list="aragamisAutocompleteList" data-bind="value:aragamiSearchInput,valueUpdate: 'keyup'">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="tablist">
+						<li class="active"><a href="#aragamis" data-toggle="tab">Aragamis</a></li>
+						<li><a data-toggle="tab" href="#skills">Skills</a></li>
+					</ul>
+			</div>
 		</form>
 	</div>
 	<div class="container-fluid" data-bind="foreach:aragamiSearchTags">
@@ -106,12 +162,16 @@
 		</div>
 	</div>
 </nav>
-<main class="container-fluid">
-	<datalist id="aragamisAutocompleteList" data-bind="foreach: data.aragamis">
-		<option data-bind="attr:{value:name}, text:name"></option>
-	</datalist>
-	<div data-bind="foreach: aragamisFilter">
+<datalist id="aragamisAutocompleteList" data-bind="foreach: data.aragamis">
+	<option data-bind="attr:{value:name}, text:name"></option>
+</datalist>
+<main class="container-fluid tab-content">
+	<div id="aragamis" class="tab-pane in active" data-bind="foreach: aragamisFilter">
 		<!-- ko template: 'aragami-template' -->
+		<!-- /ko -->
+	</div>
+	<div id="skills" class="tab-pane" data-bind="foreach: skillsFilter">
+		<!-- ko template: 'skill-base-template' -->
 		<!-- /ko -->
 	</div>
 </main>

@@ -41,57 +41,22 @@ body {
 main {
 	margin-top: 95px;
 }
+.navbar-form-no-border {
+	border: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 .panel-heading > h3 {
 	margin: 0;
 	> a {
 		color: #000;
 	}
 }
-.panel-img {
-	position: relative;
-	.aragami-large {
-		min-height: 75px;
-	}
-	.aragami-small {
-		height: 40px;
-		position: absolute;
-		right: 5px;
-		bottom: 5px;
-		@shadowWidth: 2px;
-		@shadowColor: #fff;
-		filter:
-			drop-shadow(0 0 2px @shadowColor)
-			drop-shadow(0 0 2px @shadowColor)
-			drop-shadow(0 0 2px @shadowColor);
-	}
-	h1, h2, h3, h4, h5, h6 {
-		margin: 0;
-	}
-}
 .tag-square {
 	width: 20px;
 	height: 20px;
-}
-.label {
-	&-size,
-	&-name {
-		position: absolute;
-		font-size: 75%;
-		opacity: .65;
-		top: 5px;
-		color: #000;
-		background: #fff;
-	}
-	&-drop {
-		font-size: 100%;
-		float: right;
-	}
-	&-name {
-		left: 35px;
-	}
-	&-size {
-		left: 5px;
-	}
 }
 .panel {
 	background: #333;
@@ -124,6 +89,48 @@ main {
 	}
 }
 .panel-aragami {
+	.panel-img {
+		position: relative;
+		.aragami-large {
+			min-height: 75px;
+		}
+		.aragami-small {
+			height: 40px;
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+			@shadowWidth: 2px;
+			@shadowColor: #fff;
+			filter:
+				drop-shadow(0 0 2px @shadowColor)
+				drop-shadow(0 0 2px @shadowColor)
+				drop-shadow(0 0 2px @shadowColor);
+		}
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0;
+		}
+	}
+	.label {
+		&-size,
+		&-name {
+			position: absolute;
+			font-size: 75%;
+			opacity: .65;
+			top: 5px;
+			color: #000;
+			background: #fff;
+		}
+		&-drop {
+			font-size: 100%;
+			float: right;
+		}
+		&-name {
+			left: 35px;
+		}
+		&-size {
+			left: 5px;
+		}
+	}
 	.list-unstyled {
 		margin-bottom: 0;
 		li {
@@ -134,12 +141,35 @@ main {
 		}
 	}
 }
-.navbar-form-no-border{
-	border: none;
-	margin-top: 0;
-	margin-bottom: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+.panel-skill {
+	&-effect .panel-heading { background: #77A; }
+	&-support .panel-heading { background: #7A7; }
+	&-compound {
+		&-0 .panel-heading { background: #800; }
+		&-1 .panel-heading { background: #0A0; }
+		&-2 .panel-heading { background: #A0A; }
+		&-3 .panel-heading { background: #0AA; }
+		&-4 .panel-heading { background: #AA0; }
+	}
+	.panel-heading,
+	.panel-body {
+		padding: 5px;
+		color: #ffffff;
+	}
+	.list-group {
+		margin: -5px;
+	}
+	.list-group-item {
+		background: transparent;
+		padding: 5px;
+		margin-bottom: 0;
+		border: none;
+		border-bottom: 1px solid #ddd;
+		border-radius: 0;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 .color-class(blaze, @color-blaze);
 .color-class(freeze, @color-freeze);

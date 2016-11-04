@@ -6,55 +6,22 @@ body {
 main {
   margin-top: 95px;
 }
+.navbar-form-no-border {
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .panel-heading > h3 {
   margin: 0;
 }
 .panel-heading > h3 > a {
   color: #000;
 }
-.panel-img {
-  position: relative;
-}
-.panel-img .aragami-large {
-  min-height: 75px;
-}
-.panel-img .aragami-small {
-  height: 40px;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 2px #ffffff);
-}
-.panel-img h1,
-.panel-img h2,
-.panel-img h3,
-.panel-img h4,
-.panel-img h5,
-.panel-img h6 {
-  margin: 0;
-}
 .tag-square {
   width: 20px;
   height: 20px;
-}
-.label-size,
-.label-name {
-  position: absolute;
-  font-size: 75%;
-  opacity: .65;
-  top: 5px;
-  color: #000;
-  background: #fff;
-}
-.label-drop {
-  font-size: 100%;
-  float: right;
-}
-.label-name {
-  left: 35px;
-}
-.label-size {
-  left: 5px;
 }
 .panel {
   background: #333;
@@ -79,6 +46,46 @@ main {
 .panel .table-responsive > .table-bordered tfoot tr:first-child th {
   border-bottom: 1px solid #dddddd;
 }
+.panel-aragami .panel-img {
+  position: relative;
+}
+.panel-aragami .panel-img .aragami-large {
+  min-height: 75px;
+}
+.panel-aragami .panel-img .aragami-small {
+  height: 40px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 2px #ffffff);
+}
+.panel-aragami .panel-img h1,
+.panel-aragami .panel-img h2,
+.panel-aragami .panel-img h3,
+.panel-aragami .panel-img h4,
+.panel-aragami .panel-img h5,
+.panel-aragami .panel-img h6 {
+  margin: 0;
+}
+.panel-aragami .label-size,
+.panel-aragami .label-name {
+  position: absolute;
+  font-size: 75%;
+  opacity: .65;
+  top: 5px;
+  color: #000;
+  background: #fff;
+}
+.panel-aragami .label-drop {
+  font-size: 100%;
+  float: right;
+}
+.panel-aragami .label-name {
+  left: 35px;
+}
+.panel-aragami .label-size {
+  left: 5px;
+}
 .panel-aragami .list-unstyled {
   margin-bottom: 0;
 }
@@ -88,12 +95,45 @@ main {
 .panel-aragami .list-unstyled li:last-child {
   border-bottom: none;
 }
-.navbar-form-no-border {
-  border: none;
-  margin-top: 0;
+.panel-skill-effect .panel-heading {
+  background: #77A;
+}
+.panel-skill-support .panel-heading {
+  background: #7A7;
+}
+.panel-skill-compound-0 .panel-heading {
+  background: #800;
+}
+.panel-skill-compound-1 .panel-heading {
+  background: #0A0;
+}
+.panel-skill-compound-2 .panel-heading {
+  background: #A0A;
+}
+.panel-skill-compound-3 .panel-heading {
+  background: #0AA;
+}
+.panel-skill-compound-4 .panel-heading {
+  background: #AA0;
+}
+.panel-skill .panel-heading,
+.panel-skill .panel-body {
+  padding: 5px;
+  color: #ffffff;
+}
+.panel-skill .list-group {
+  margin: -5px;
+}
+.panel-skill .list-group-item {
+  background: transparent;
+  padding: 5px;
   margin-bottom: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+}
+.panel-skill .list-group-item:last-child {
+  border-bottom: none;
 }
 .color-blaze {
   color: #ee0000;

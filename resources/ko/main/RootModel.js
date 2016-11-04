@@ -3,9 +3,17 @@ function RootModel() {
 
 
 	self.data = {
-		aragamis: []
+		aragamis: [],
+		skills:{
+			effect: [],
+			support: [],
+			compound: []
+		}
 	};
 	MAIN_DATA.aragamis.forEach(aragami=>self.data.aragamis.push(new AragamiModel(aragami)));
+	MAIN_DATA.skills.effect.forEach(skill=>self.data.skills.effect.push(new SkillEffectModel(skill)));
+	MAIN_DATA.skills.support.forEach(skill=>self.data.skills.support.push(new SkillSupportModel(skill)));
+	MAIN_DATA.skills.compound.forEach(skill=>self.data.skills.compound.push(new SkillCompoundModel(skill)));
 
 	console.log(self.data);
 
@@ -55,5 +63,15 @@ function RootModel() {
 		});
 
 		return list.length > 0 ? list : self.data.aragamis;
+	})
+
+	self.skillsFilter = ko.pureComputed(()=>{
+		var list = [];
+
+		self.data.skills.effect.forEach((v)=>list.push(v));
+		self.data.skills.support.forEach((v)=>list.push(v));
+		self.data.skills.compound.forEach((v)=>list.push(v));
+
+		return list;
 	})
 }
