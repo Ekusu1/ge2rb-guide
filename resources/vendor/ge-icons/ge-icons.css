@@ -57,3 +57,6 @@
 .ge-resistance:before {
   content:  "\e900";
 }
+.ge-burst:before {
+  content:  "\e906";
+}
