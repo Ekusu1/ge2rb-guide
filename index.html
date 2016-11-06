@@ -158,7 +158,7 @@
 	<div class="container-fluid" data-bind="foreach:aragamiSearchTags">
 		<div class="btn-group btn-group-xs">
 			<button type="button" class="btn" data-bind="text:$data, click:$root.removeAragamiSearchTag, attr:{'data-to-remove': $data}" ></button>
-			<button type="button" class="btn btn-danger" data-bind="text:$data, click:$root.removeAragamiSearchTag, attr:{'data-to-remove': $data}">&times;</button>
+			<button type="button" class="btn btn-danger" data-bind="click:$root.removeAragamiSearchTag, attr:{'data-to-remove': $data}">&times;</button>
 		</div>
 	</div>
 </nav>
