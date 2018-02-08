@@ -1,5 +1,6 @@
 # ge2rb-guide
-This is an interactive guide for the game God Eater 2 Rage Burst.
+This is an interactive guide for the game God Eater 2 Rage Burst.  
+Link to the guide: https://ekusu1.github.io/ge2rb-guide/
 
 ## Current Features
 
